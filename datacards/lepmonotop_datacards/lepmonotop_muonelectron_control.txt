@@ -7,32 +7,32 @@ kmax * number of nuisance parameters
 -------------------------------------------------------------------------------------------------
 shapes *         tme       ../../../combined_model.root combinedws:lepmonotop_muonelectron_$PROCESS combinedws:lepmonotop_muonelectron_$PROCESS_$SYSTEMATIC
 shapes data_obs  tme       ../../../combined_model.root combinedws:lepmonotop_muonelectron_data
-shapes ttbar     tme       ../../../combined_model.root combinedws:lepmonotop_muonelectronModel_ttbar_model
-#shapes wjets     tme       ../../../combined_model.root combinedws:lepmonotop_muonelectronwModel_wjets_model
+shapes ttbarlj   tme       ../../../combined_model.root combinedws:lepmonotop_muonelectronModel_ttbarlj_model
+shapes ttbardil  tme       ../../../combined_model.root combinedws:lepmonotop_muonelectronModel_ttbardil_model
+#shapes wjets    tme       ../../../combined_model.root combinedws:lepmonotop_muonelectronwModel_wjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     tme
 observation  -1 
 --------------------------------------------------------------------------------------------------------------------------------------------------
-bin			tme       tme       tme       tme       tme       tme
-process			zll       dibosons  stop      wjets     qcd       ttbardil
-process			1         5         3         2         7         4
-rate			-1        -1        -1        -1        -1        1
+bin			tme       tme       tme       tme       tme       tme       tme
+process			zll       dibosons  stop      wjets     qcd       ttbarlj   ttbardil
+process			1         5         3         2         7         4         8
+rate			-1        -1        -1        -1        -1        -1        1
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-stop_Norm  lnN	 	-         -         1.2       -         -         -
-vv_Norm	   lnN	        -         1.2       -         -         -         -
-QCDmu_Norm lnN	        -         -         -         -         2.0       - 
-lumi	   lnN          1.023     1.023     1.023     1.023     1.023     -
-sf_mu      lnN          1.01      1.01      1.01      1.01      1.01      1.01
-btag       shape        1.0       1.0       1.0       1.0       1.0       -
-ak4_jec    lnN		1.04      1.04      1.04      1.04      1.04      -
-mistag     shape	1.0       1.0       1.0       1.0       1.0       -
-veto_tau   lnN		1.03      1.03      1.03      1.03      1.03      1.03
-#met	   lnN		1.05      1.05      1.05      1.05      1.05      1.05
-mT	   lnN		-         -         -         -         -         -
-trig_met   lnN		1.01      1.01      1.01      1.01      1.01      -
-track_mu   lnN		1.005     1.005     1.005     1.005     1.005     1.005
-zjethf     lnN		0.95	  -	    -	      -		-	  -
-wjethf     lnN	        -	  -	    -	      0.95	-	  -
+stop_Norm  lnN	 	-         -         1.2       -         -         -	    - 
+zll_Norm   lnN	 	1.22      -         -         -         -         -	    - 
+vv_Norm	   lnN	        -         1.2       -         -         -         -	    -
+QCDmu_Norm lnN	        -         -         -         -         2.0       -	    -
+lumi	   lnN          1.023     1.023     1.023     1.023     1.023     -         -
+sf_mu      lnN          1.01      1.01      1.01      1.01      1.01      1.01      1.01
+btag       shape        1.0       1.0       1.0       1.0       1.0       -         -
+ak4_jec    lnN		1.04      1.04      1.04      1.04      1.04      -         -
+mistag     shape	1.0       1.0       1.0       1.0       1.0       -         -
+veto_tau   lnN		1.03      1.03      1.03      1.03      1.03      1.03      1.03
+#met	   lnN		1.05      1.05      1.05      1.05      1.05      1.05      1.05
+trig_met   lnN		1.01      1.01      1.01      1.01      1.01      -         -
+track_mu   lnN		1.005     1.005     1.005     1.005     1.005     1.005     1.05
+wjethf     lnN	        -	  -	    -	      0.95	-	  -         -
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 ttbartagmuon rateParam tme ttbar (1.0*@0*@1) btag,mistag
