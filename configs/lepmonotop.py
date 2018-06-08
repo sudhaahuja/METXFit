@@ -14,15 +14,15 @@ lepmonotop_muon_category = {
 	,"samples":
              {  
 		  # Signal Region
-		  #"Zvv_signale"    	       :['signal','zjets',1,0]
-                  "Zll_signalm"	               :['signal','zll',1,0]
- 		  ,"Wlv_signalm"  	       :['signal','wjets',1,0]
-		  ,"Diboson_signalm"  	       :['signal','dibosons',1,0]
-		  ,"ttbarlj_signalm"   	       :['signal','ttbarlj',1,0]
-		  ,"ttbardil_signalm"  	       :['signal','ttbardil',1,0]
-		  ,"ST_signalm"                :['signal','stop',1,0]
-		  ,"QCD_signalm"	       :['signal','qcd',1,0]
-		  ,"Data_signalm"	       :['signal','data',0,0]
+		  #"Zvv_signalm"    	       :['signalm','zjets',1,0]
+                  "Zll_signalm"	               :['signalm','zll',1,0]
+ 		  ,"Wlv_signalm"  	       :['signalm','wjets',1,0]
+		  ,"Diboson_signalm"  	       :['signalm','dibosons',1,0]
+		  ,"ttbarlj_signalm"   	       :['signalm','ttbarlj',1,0]
+		  ,"ttbardil_signalm"  	       :['signalm','ttbardil',1,0]
+		  ,"ST_signalm"                :['signalm','stop',1,0]
+		  ,"QCD_signalm"	       :['signalm','qcd',1,0]
+		  ,"Data_signalm"	       :['signalm','data',0,0]
 		  # signals
                   #,"hsDM_1000_50_100_signal"    :['signal','hsDM-1000-50-100_signal',1,1]
 
@@ -72,14 +72,14 @@ lepmonotop_electron_category = {
              {  
 		  # Signal Region
 		  #"Zvv_signale"    	       :['signal','zjets',1,0]
-                  "Zll_signale"	               :['signal','zll',1,0]
- 		  ,"Wlv_signale"  	       :['signal','wjets',1,0]
-		  ,"Diboson_signale"  	       :['signal','dibosons',1,0]
-		  ,"ttbarlj_signale"   	       :['signal','ttbarlj',1,0]
-                  ,"ttbardil_signale"           :['signal','ttbardil',1,0]
-		  ,"ST_signale"                :['signal','stop',1,0]
-		  ,"QCD_signale"	       :['signal','qcd',1,0]
-		  ,"Data_signale"	       :['signal','data',0,0]
+                  "Zll_signale"	               :['signale','zll',1,0]
+ 		  ,"Wlv_signale"  	       :['signale','wjets',1,0]
+		  ,"Diboson_signale"  	       :['signale','dibosons',1,0]
+		  ,"ttbarlj_signale"   	       :['signale','ttbarlj',1,0]
+                  ,"ttbardil_signale"           :['signale','ttbardil',1,0]
+		  ,"ST_signale"                :['signale','stop',1,0]
+		  ,"QCD_signale"	       :['signale','qcd',1,0]
+		  ,"Data_signale"	       :['signale','data',0,0]
 		  # signals
                   #,"hsDM_1000_50_100_signal"    :['signal','hsDM-1000-50-100_signal',1,1]
 
