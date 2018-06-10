@@ -8,7 +8,8 @@ kmax * number of nuisance parameters
 shapes *         wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronw_$PROCESS combinedws:lepmonotop_singleelectronw_$PROCESS_$SYSTEMATIC
 shapes data_obs  wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronw_data
 shapes wjets     wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronwModel_wjets_model
-#shapes ttbar     wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronwtopModel_ttbarlj_model
+#shapes ttbarlj  wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronwtopModel_ttbarlj_model
+#shapes ttbardil wen       ../../../combined_model.root combinedws:lepmonotop_singleelectronwtopModel_ttbardil_model
 -------------------------------------------------------------------------------------------------
 bin 	     wen
 observation  -1 
@@ -20,21 +21,24 @@ rate			-1        -1        -1        1         -1        -1        -1
 --------------------------------------------------------------------------------------------------------------------------------------------------
 stop_Norm  lnN		-         -         1.2       -         -         -         -
 vv_Norm	   lnN	        -         1.2       -         -         -         -	    -
-zll_Norm   lnN	        -         -         -         -         -         1.2	    1.2
+zll_Norm   lnN	        1.2       -         -         -         -         -	    -
 QCDe_Norm  lnN	        -         -         -         -         2.0       -         -
+ttlj_Norm  lnN          -         -         -         -         -         1.15      -  
+ttdil_Norm lnN          -         -         -         -         -         -         1.15
 lumi       lnN          1.023     1.023     1.023     -         1.023     1.023     1.023
-sf_ele     lnN          1.01      1.01      1.01      1.01      1.01      1.01      1.01
-btag       shape        1.0       1.0       1.0       -         1.0       -         -
-ak4_jec    lnN		1.04      1.04      1.04      -         1.04      -         -
-mistag	   shape	1.0       1.0       1.0       -         1.0       -         -
-trig_ele   lnN		1.01      1.01      1.01      1.01      1.01      1.01      1.01
-veto_tau   lnN		1.03      1.03      1.03      1.03      1.03      1.03      1.03
-#met        lnN		1.05      1.05      1.05      1.05      1.05      1.05      1.04
-track_ele  lnN		1.005     1.005     1.005     1.005     1.005     1.005     1.005
+btag       shape        1.0       1.0       1.0       -         1.0       1.0       1.0
+mistag     shape        1.0       1.0       1.0       -         1.0       1.0       1.0
+ak4_jec    lnN		1.04      1.04      1.04      -         1.04      1.04      1.04
+veto_tau   lnN		1.03      1.03      1.03      -         1.03      1.03      1.03
+#met       lnN		1.05      1.05      1.05      1.05      1.05      1.05      1.04
+#trig_met  lnN          1.01      1.01      1.01      -         1.01      1.01      1.01
+sf_ele     lnN          1.02      1.02      1.02      -         1.02      1.02      1.02
+trig_ele   lnN          1.01      1.01      1.01      -         1.01      1.01      1.01
+track_ele  lnN		1.005     1.005     1.005     -         1.005     1.005     1.005
 wjethf     lnN		-	  -	    -	      0.95	-	  -         -
+zjethf     lnN          0.95      -         -         -         -         -         -        
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
-wlnbtagelectron rateParam wen wjets (1.0*@0*@1) btag,mistag
 lepmonotop_stat_error_singleelectronwModel_bin0 param 0.0 1
 lepmonotop_stat_error_singleelectronwModel_bin1 param 0.0 1
 lepmonotop_stat_error_singleelectronwModel_bin2 param 0.0 1

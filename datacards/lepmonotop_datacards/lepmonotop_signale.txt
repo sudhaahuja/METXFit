@@ -1,29 +1,29 @@
-Control Region Datacard -- lepmonotop_signalm.txt
+Control Region Datacard -- lepmonotop_signale.txt
 
 imax * number of bins
 jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_$PROCESS combinedws:lepmonotop_signalm_$PROCESS_$SYSTEMATIC
-shapes data_obs  signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_data
-shapes signalm   signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_XX-SIGNAL-XX_signal combinedws:lepmonotop_signalm_XX-SIGNAL-XX_signal_$SYSTEMATIC
-shapes ttbarlj   signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_ttbarlj_model
-shapes ttbardil  signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_ttbardil_model
-shapes wjets     signalm       ../../../combined_model.root combinedws:lepmonotop_signalm_wjets_model
+shapes *         signale       ../../../combined_model.root combinedws:lepmonotop_signale_$PROCESS combinedws:lepmonotop_signale_$PROCESS_$SYSTEMATIC
+shapes data_obs  signale       ../../../combined_model.root combinedws:lepmonotop_signale_data
+shapes signale   signale       ../../../combined_model.root combinedws:lepmonotop_signale_XX-SIGNAL-XX_signal combinedws:lepmonotop_signale_XX-SIGNAL-XX_signal_$SYSTEMATIC
+shapes ttbarlj   signale       ../../../combined_model.root combinedws:lepmonotop_signale_ttbarlj_model
+shapes ttbardil  signale       ../../../combined_model.root combinedws:lepmonotop_signale_ttbardil_model
+shapes wjets     signale       ../../../combined_model.root combinedws:lepmonotop_signale_wjets_model
 -------------------------------------------------------------------------------------------------
-bin 	     signalm
+bin 	     signale
 observation  -1 
 --------------------------------------------------------------------------------------------------------------------------------------------------
-bin			signalm   signalm        signalm   signalm   signalm   signalm   signalm   signalm
-process			signal    dibosons       stop      wjets     qcd       ttbarlj   ttbardil  zll 
+bin			signale   signale        signale   signale   signale   signale   signale   signale
+process			signale   dibosons       stop      wjets     qcd       ttbarlj   ttbardil  zll 
 process			0         5              3         2         7         4         9         1
-rate			-1        -1             -1        1         -1        1         1         -1
+rate			-1        -1             -1        1         -1        1         1        -1
 --------------------------------------------------------------------------------------------------------------------------------------------------
 stop_Norm      lnN      -         -              1.2       -         -         -         -         -
 vv_Norm	       lnN	-         1.2            -         -         -         -         -         -
 zll_Norm       lnN	-         -              -         -         -         -         -         1.2
-QCDsigm_Norm   lnN	-         -              -         -         2.0       -         -         -
+QCDsige_Norm   lnN	-         -              -         -         2.0       -         -         -
 btag           shape    1.0       1.0            1.0       1.0       1.0       1.0       1.0       1.0
 #ecf_tag       lnN	1.07      -              -         -         -         -         -         -
 mistag	       shape	1.0       1.0            1.0       1.0       1.0       1.0       1.0       1.0
@@ -31,9 +31,9 @@ mistag	       shape	1.0       1.0            1.0       1.0       1.0       1.0  
 #trig_met      lnN	1.01      1.01           1.01      -         1.01      -         -         1.01
 wjethf 	       lnN      -         -              -         0.95      -         -         -         -
 zjethf 	       lnN      -         -              -         -         -         -         -         0.95
-sf_mu          lnN      1.01      1.01		 1.01	   -	     1.01      -	 1.01      1.01
-trig_mu        lnN      1.01      1.01		 1.01	   -  	     1.01      -	 -         1.01
-track_mu       lnN      1.005     1.005          1.005     -         1.005     -         -         1.005
+sf_ele         lnN      1.01      1.01		 1.01	   -	     1.01      -	 1.01      1.01
+trig_ele       lnN      1.01      1.01		 1.01	   -	     1.01      -	 -         1.01
+track_ele      lnN      1.005     1.005          1.005     -         1.005     -         -         1.005
 ----------------------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 btag param 0.0 1
