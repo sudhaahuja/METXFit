@@ -18,10 +18,10 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   # special datasets/histograms representing these and systematic effects 
   # but for now this is just kept simple 
   processName = "TTbarDil" # Give a name of the process being modelled
-  metname = "met"    # Observable variable name 
+  mtname = "mT"    # Observable variable name 
 
   targetmc     = _fin.Get("signalm_ttbardil")      # define monimal (MC) of which process this config will model
-  targetmc_e     = _fin.Get("signale_ttbardil")
+  targetmc_e   = _fin.Get("signale_ttbardil")
   controlmc    = _fin.Get("muonelectron_ttbardil")
   controlmc_e  = _fin.Get("electronmuon_ttbardil")
  
@@ -84,7 +84,7 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
 
   #######################################################################################################
 
-  cat = Category(model,cid,nam,_fin,_fOut,_wspace,out_ws,_bins,metname,targetmc.GetName(),CRs,diag)
+  cat = Category(model,cid,nam,_fin,_fOut,_wspace,out_ws,_bins,mtname,targetmc.GetName(),CRs,diag)
   #cat.setDependant("wjets","ttbarsignal")  # Can use this to state that the "BASE" of this is already dependant on another process
   # EG if the W->lv in signal is dependant on the Z->vv and then the W->mv is depenant on W->lv, then 
   # give the arguments model,channel name from the config which defines the Z->vv => W->lv map! 
