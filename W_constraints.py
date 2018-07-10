@@ -68,7 +68,7 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   # special datasets/histograms representing these and systematic effects 
   # but for now this is just kept simple 
   processName = "WJets" # Give a name of the process being modelled
-  metname = "met"    # Observable variable name 
+  mtname = "mT"    # Observable variable name 
 
   targetmc     = _fin.Get("signalm_wjets")      # define monimal (MC) of which process this config will model
   targetmc_e     = _fin.Get("signale_wjets")
@@ -122,11 +122,11 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   # these must be created and writted to the same dirctory as the nominal (fDir)
   
   addWErrors(WScales,    targetmc,"wmn", "singlemuonwModel",     _fOut,CRs,0,cid)
-  addWErrors(WScales_e,  targetmc,"wen", "singleelectronwModel", _fOut,CRs,1,cid)
+  addWErrors(WScales_e,  targetmc_e,"wen", "singleelectronwModel", _fOut,CRs,1,cid)
 
   #######################################################################################################
 
-  cat = Category(model,cid,nam,_fin,_fOut,_wspace,out_ws,_bins,metname,targetmc.GetName(),CRs,diag)
+  cat = Category(model,cid,nam,_fin,_fOut,_wspace,out_ws,_bins,mtname,targetmc.GetName(),CRs,diag)
   #cat.setDependant("zjets","wjetsdependant")  # Can use this to state that the "BASE" of this is already dependant on another process
   # EG if the W->lv in signal is dependant on the Z->vv and then the W->mv is depenant on W->lv, then 
   # give the arguments model,channel name from the config which defines the Z->vv => W->lv map! 
