@@ -110,6 +110,58 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   TopScales_w    = makeTop(cid,_fOut,"topwmn",targetmc,controlmc_w,None,False)
   TopScales_w_e  = makeTop(cid,_fOut,"topwen",targetmc,controlmc_w_e,None,False)
 
+  ### met trig ###                                                                                                                            
+  ftrig = r.TFile.Open('files/unc/fixtrig_monoh.root')
+  h_trig_down = ftrig.Get('trig_sys_down')
+  h_trig_up = ftrig.Get('trig_sys_up')
+
+  ttbar_ratio_trig_up = target.Clone(); ttbar_ratio_trig_up.SetName('w_weights_%s_mettrig_Up'%cid)
+  for b in range(ttbar_ratio_trig_up.GetNbinsX()): ttbar_ratio_trig_up.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_ratio_trig_up,h_trig_up,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_ratio_trig_up.Divide(controlmc)
+  _fOut.WriteTObject(ttbar_ratio_trig_up)
+
+  ttbar_ratio_trig_down = target.Clone(); ttbar_ratio_trig_down.SetName('w_weights_%s_mettrig_Down'%cid)
+  for b in range(ttbar_ratio_trig_down.GetNbinsX()): ttbar_ratio_trig_down.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_ratio_trig_down,h_trig_down,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_ratio_trig_down.Divide(controlmc)
+  _fOut.WriteTObject(ttbar_ratio_trig_down)
+
+  ttbar_e_ratio_trig_up = target.Clone(); ttbar_e_ratio_trig_up.SetName('w_e_weights_%s_mettrig_Up'%cid)
+  for b in range(ttbar_e_ratio_trig_up.GetNbinsX()): ttbar_e_ratio_trig_up.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_e_ratio_trig_up,h_trig_up,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_e_ratio_trig_up.Divide(controlmc_e)
+  _fOut.WriteTObject(ttbar_e_ratio_trig_up)
+
+  ttbar_e_ratio_trig_down = target.Clone(); ttbar_e_ratio_trig_down.SetName('w_e_weights_%s_mettrig_Down'%cid)
+  for b in range(ttbar_e_ratio_trig_down.GetNbinsX()): ttbar_e_ratio_trig_down.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_e_ratio_trig_down,h_trig_down,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_e_ratio_trig_down.Divide(controlmc_e)
+  _fOut.WriteTObject(ttbar_e_ratio_trig_down)
+
+  ttbar_w_ratio_trig_up = target.Clone(); ttbar_w_ratio_trig_up.SetName('w_weights_%s_mettrig_Up'%cid)
+  for b in range(ttbar_w_ratio_trig_up.GetNbinsX()): ttbar_w_ratio_trig_up.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_w_ratio_trig_up,h_trig_up,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_w_ratio_trig_up.Divide(controlmc)
+  _fOut.WriteTObject(ttbar_w_ratio_trig_up)
+
+  ttbar_w_ratio_trig_down = target.Clone(); ttbar_w_ratio_trig_down.SetName('w_weights_%s_mettrig_Down'%cid)
+  for b in range(ttbar_w_ratio_trig_down.GetNbinsX()): ttbar_w_ratio_trig_down.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_w_ratio_trig_down,h_trig_down,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_w_ratio_trig_down.Divide(controlmc)
+  _fOut.WriteTObject(ttbar_w_ratio_trig_down)
+
+  ttbar_w_e_ratio_trig_up = target.Clone(); ttbar_w_e_ratio_trig_up.SetName('w_ttbar_e_weights_%s_mettrig_Up'%cid)
+  for b in range(ttbar_w_e_ratio_trig_up.GetNbinsX()): ttbar_w_e_ratio_trig_up.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_w_e_ratio_trig_up,h_trig_up,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_w_e_ratio_trig_up.Divide(controlmc_e)
+  _fOut.WriteTObject(ttbar_w_e_ratio_trig_up)
+
+  ttbar_w_e_ratio_trig_down = target.Clone(); ttbar_w_e_ratio_trig_down.SetName('w_ttbar_e_weights_%s_mettrig_Down'%cid)
+  for b in range(ttbar_w_e_ratio_trig_down.GetNbinsX()): ttbar_w_e_ratio_trig_down.SetBinContent(b+1,0)
+  diag.generateWeightedTemplate(ttbar_w_e_ratio_trig_down,h_trig_down,metname,metname,_wspace.data("signal_wjets"))
+  ttbar_w_e_ratio_trig_down.Divide(controlmc_e)
+  _fOut.WriteTObject(ttbar_w_e_ratio_trig_down)
 
   #######################################################################################################
 
