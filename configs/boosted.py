@@ -29,7 +29,8 @@ for mass in range(0,len(cutstrings)):
     for s in ['doublebp','doublebf']:
         boosted_category[s+str(mass)] = {
              'name':"boosted_"+s+"_mass"+str(mass)
-             ,'in_file_name':"/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/SuperMonoJet/fitting/boosted_withsignals/fittingForest_boosted_"+s+".root"
+#             ,'in_file_name':"/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/SuperMonoJet/fitting/boosted_withsignals/fittingForest_boosted_"+s+".root"
+             ,'in_file_name':"/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/SuperMonoJet/fitting/boosted/fittingForest_boosted_"+s+".root"
             ,"cutstring":cutstrings[mass]
             ,"varstring":["min(999.9999,met)",250,1000]
        	    ,"weightname":"weight"
@@ -115,6 +116,11 @@ for mass in range(0,len(cutstrings)):
                 ,"ST_wen"                    :['singleelectronw','stop',1,0]
                 ,"QCD_wen"                   :['singleelectronw','qcd',1,0]
                 ,"Data_wen"                  :['singleelectronw','data',0,0]
+
+                   # Photon control                                                                                                                                                        
+                ,"Pho_pho"                   :['singlephoton','gjets',1,1]
+                ,"QCD_pho"                   :['singlephoton','qcd',1,0]
+                ,"Data_pho"                  :['singlephoton','data',0,0]
                 }
              }
 
