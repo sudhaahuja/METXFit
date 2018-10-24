@@ -1,0 +1,38 @@
+Control Region Datacard -- resolved_fail_mass1_photon_fail_control.txt
+
+imax * number of bins
+jmax * number of processes minus 1
+kmax * number of nuisance parameters
+
+-------------------------------------------------------------------------------------------------
+shapes *         pho_fail       ../../combined_model_resolved.root combinedws:resolved_fail_mass1_photon_fail_$PROCESS combinedws:resolved_fail_mass1_photon_$PROCESS_$SYSTEMATIC
+shapes data_obs  pho_fail       ../../../combined_model_resolved.root combinedws:resolved_fail_mass1_photon_data
+shapes gjets     pho_fail       ../../../combined_model_resolved.root combinedws:resolved_fail_mass1_photonfailModel_zjets_model
+-------------------------------------------------------------------------------------------------
+bin 	     pho_fail
+observation  -1 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+bin			pho_fail     pho_fail
+process			gjets   qcd
+process			6       7
+rate			1       -1
+------------------------------------------
+lumi       lnN          1.023   1.023
+btag       shape        1.0     1.0
+ak4_jec    lnN		-       1.04
+mistag     shape        1.0     1.0
+veto_tau   lnN		1.03    1.03
+met	   lnN		1.05    1.05
+#pho_trig   lnN          1.01    1.01
+---------------------------------------------------------------
+# Parametric uncertainties associated to control regions fits
+resolved_pass_mass1_stat_error_photonfailModelCR_bin0 param 0.0 1
+resolved_pass_mass1_stat_error_photonfailModelCR_bin1 param 0.0 1
+resolved_pass_mass1_stat_error_photonfailModelCR_bin2 param 0.0 1
+resolved_pass_mass1_stat_error_photonfailModelCR_bin3 param 0.0 1
+#gjetseff param 0.0346 0.00174 
+#phoeffSF  extArg 1.0 [0.0,10.0]
+#gjetsfailphoton rateParam pho_fail gjets ((1.0-@0*@1)/(1.0-@1)) phoeffSF,gjetseff
+#mettrig param 0.0 1
+btag param 0.0 1
+mistag param 0.0 1
