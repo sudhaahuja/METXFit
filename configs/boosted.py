@@ -17,7 +17,7 @@
 # Can define anything useful here outside the catefory dictionary which may be common to several categories, eg binning in MET, systematics ecc
 # systematics will expect samples with sample_sys_Up/Down but will skip if not found 
 
-bins = [250,270,350,475,1000]
+bins = [250,270,350,475,3000]
 systematics=["btag","mistag"]
 cutstrings=["n2ddt56<0 && fjmass>0 && fjmass<60","n2ddt56<0 && fjmass>60 && fjmass<105","n2ddt56<0 && fjmass>105 && fjmass<150","n2ddt56<0 && fjmass>150 && fjmass<3000"]
 #cutstrings=["n2ddt56<0 && fjmass>0 && fjmass<60"]
