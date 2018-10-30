@@ -7,7 +7,9 @@ then
 elif [[ "$1" == "boosted" ]]
 then
     for mass in 0 1 2 3 ; do
-	python buildModel.py $1 --mass $mass
+	for btag in doublebf doublebp; do
+	    python buildModel.py $1 --mass $mass --btag $btag
+        done
     done
 else
     for mass in 0 1 2 3 ; do
