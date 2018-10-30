@@ -25,7 +25,7 @@ To run the fit:
 
 ```bash
 cd datacards/
-combine -M MaxLikelihoodFit datacard_name.txt --saveShapes --saveWithUncertainties
+combine -M AsymptoticLimits -t -1 datacard_name.txt --rAbsAcc 0 --rMax 30
 ```
 
 And the signal masked-fit:
