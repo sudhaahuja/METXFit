@@ -19,7 +19,6 @@
 
 signals = {}
 #with open('../../../CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
-#with open('/uscms_data/d3/matteoc/analysis/CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
 with open('/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
                 for line in signal_file:
                     name = line.rstrip()
@@ -96,11 +95,12 @@ samples = {
     ,"ST_wen"                    :['singleelectronw','stop',1,0]
     ,"QCD_wen"                   :['singleelectronw','qcd',1,0]
     ,"Data_wen"                  :['singleelectronw','data',0,0]
-    # Photon control
-    ,"Pho_pho"                   :['singlephoton','gjets',1,1]
-    ,"QCD_pho"                   :['singlephoton','qcd',1,0]
-    ,"Data_pho"                  :['singlephoton','data',0,0]
-    }
+
+                  # Photon control                                                                                                                                          
+    ,"Pho_pho"                   :['photon','gjets',1,0]
+    ,"QCD_pho"                   :['photon','qcd',1,0]
+    ,"Data_pho"                  :['photon','data',0,0] 
+   }
 samples.update(signals)
 samples_fail = {}
 for sample in samples: 
@@ -117,6 +117,7 @@ for mass in range(0,len(cutstrings)):
     for s in ['pass','fail']:
         resolved_category[s+str(mass)] = {
              'name':"resolved_"+s+"_mass"+str(mass)
+#            ,'in_file_name':"/uscms_data/d3/matteoc/analysis/CMSSW_8_0_29/src/PandaAnalysis/SuperMonoJet/fitting/resolved/fittingForest_resolved_"+s+".root"
             ,'in_file_name':"/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/SuperMonoJet/fitting/resolved/fittingForest_resolved_"+s+".root"
             ,"cutstring":cutstrings[mass]
             ,"varstring":["min(999.9999,met)",250,3000]

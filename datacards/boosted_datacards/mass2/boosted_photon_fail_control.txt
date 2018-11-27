@@ -7,7 +7,7 @@ kmax * number of nuisance parameters
 -------------------------------------------------------------------------------------------------
 shapes *         pho_fail       ../../combined_model_boosted.root combinedws:boosted_doublebf_mass2_photon_$PROCESS combinedws:boosted_doublebf_mass2_photon_$PROCESS_$SYSTEMATIC
 shapes data_obs  pho_fail       ../../../combined_model_boosted.root combinedws:boosted_doublebf_mass2_photon_data
-shapes gjets     pho_fail       ../../../combined_model_boosted.root combinedws:boosted_doublebf_mass2_photondoublebfModel_zjets_model
+shapes gjets     pho_fail       ../../../combined_model_boosted.root combinedws:boosted_doublebf_mass2_photonModel_zjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     pho_fail
 observation  -1 
@@ -18,21 +18,21 @@ process			6       7
 rate			1       -1
 ------------------------------------------
 lumi       lnN          1.023   1.023
-btag       shape        1.0     1.0
+btag       shape        -       1.0
 ak4_jec    lnN		-       1.04
-mistag     shape        1.0     1.0
+mistag     shape        -       1.0
 veto_tau   lnN		1.03    1.03
 met	   lnN		1.05    1.05
-#pho_trig   lnN          1.01    1.01
+pho_trig   lnN          1.01    1.01
 ---------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 boosted_doublebp_mass2_stat_error_photonfailModelCR_bin0 param 0.0 1
 boosted_doublebp_mass2_stat_error_photonfailModelCR_bin1 param 0.0 1
 boosted_doublebp_mass2_stat_error_photonfailModelCR_bin2 param 0.0 1
 boosted_doublebp_mass2_stat_error_photonfailModelCR_bin3 param 0.0 1
-#gjetseff param 0.0346 0.00174 
-#phoeffSF  extArg 1.0 [0.0,10.0]
-#gjetsfailphoton rateParam pho_fail gjets ((1.0-@0*@1)/(1.0-@1)) phoeffSF,gjetseff
-mettrig param 0.0 1
+gjetseff param 0.0346 0.00174 
+phoeffSF  extArg 1.0 [0.0,10.0]
+gjetsfailphoton rateParam pho_fail gjets ((1.0-@0*@1)/(1.0-@1)) phoeffSF,gjetseff
+#mettrig param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1

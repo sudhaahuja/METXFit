@@ -17,13 +17,14 @@ process			gjets   qcd
 process			6       7
 rate			1       -1
 ------------------------------------------
+QCDe_Norm  lnN          -       2.0 
 lumi       lnN          1.023   1.023
-btag       shape        1.0     1.0
+btag       shape        -       1.0
 ak4_jec    lnN		-       1.04
-mistag     shape        1.0     1.0
+mistag     shape        -       1.0
 veto_tau   lnN		1.03    1.03
 met	   lnN		1.05    1.05
-#pho_trig   lnN          1.01    1.01
+pho_trig   lnN          1.01    1.01
 ---------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 resolved_pass_mass0_stat_error_photonModelCR_bin0 param 0.0 1
@@ -33,6 +34,6 @@ resolved_pass_mass0_stat_error_photonModelCR_bin3 param 0.0 1
 gjetseff param 0.0346 0.00174 
 phoeffSF  extArg 1.0 [0.0,10.0]
 gjetspassphoton rateParam pho gjets  (@0*1.0) phoeffSF
-mettrig param 0.0 1
+#mettrig param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1

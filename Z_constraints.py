@@ -24,7 +24,7 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   controlmc             = _fin.Get("dimuon_zll")              # defines Zmm MC of which process will be controlled by
   controlmc_e           = _fin.Get("dielectron_zll")          # defines Zmm MC of which process will be controlled by
   controlmc_w        = _fin.Get("signal_wjets")
-  controlmc_photon   = _fin.Get("singlephoton_gjets")       # defines Gjets MC of which process will be controlled by
+  controlmc_photon   = _fin.Get("photon_gjets")       # defines Gjets MC of which process will be controlled by
 
   # Create the transfer factors and save them (not here you can also create systematic variations of these 
   # transfer factors (named with extention _sysname_Up/Down
@@ -162,7 +162,7 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
   _gjet_mcname 	     = "photon_gjets"
   GJet               = _fin.Get("photon_gjets")
 
-  fztoa = r.TFile.Open("files/new/atoz_unc.root")
+  fztoa = r.TFile.Open("files/newKfactors/atoz_unc.root")
   
   ztoa_renscale_up   = fztoa.Get("znlo1_over_anlo1_renScaleUp")
   ztoa_renscale_down = fztoa.Get("znlo1_over_anlo1_renScaleDown")
@@ -229,7 +229,7 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
   
 
   # fztoaewk = fztoa
-  fztoaewk = r.TFile.Open('files/new/atoz_unc.root')
+  fztoaewk = r.TFile.Open('files/newKfactors/atoz_unc.root')
   ztoa_ewk_up   = fztoaewk.Get("a_ewkcorr_overz_Upcommon")
   ztoa_ewk_down = fztoaewk.Get("a_ewkcorr_overz_Downcommon")
 
@@ -264,7 +264,7 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
   ### Now lets do the same thing for W
     
   #fztow = r.TFile.Open("files/wtoz_unc.root")
-  fztow = r.TFile.Open("files/new/wtoz_unc.root") 
+  fztow = r.TFile.Open("files/newKfactors/wtoz_unc.root") 
 
   ztow_renscale_up   = fztow.Get("znlo1_over_wnlo1_renScaleUp")
   ztow_renscale_down = fztow.Get("znlo1_over_wnlo1_renScaleDown")
@@ -323,7 +323,7 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
   _fOut.WriteTObject(wratio_pdf_down)
 
   #fztowewk = r.TFile.Open("files/wtoz_ewkunc.root")
-  fztowewk = r.TFile.Open("files/new/wtoz_unc.root")
+  fztowewk = r.TFile.Open("files/newKfactors/wtoz_unc.root")
   ztow_ewk_up   = fztowewk.Get("w_ewkcorr_overz_Upcommon")
   ztow_ewk_down = fztowewk.Get("w_ewkcorr_overz_Downcommon")
 
