@@ -35,6 +35,10 @@ cd datacards/
 text2workspace.py combined_2cat.txt --channel-masks
 combine combined_2cat.root -M MaxLikelihoodFit --saveShapes --saveWithUncertainties --setPhysicsModelParameters mask_tight_sig=1,mask_loose_sig=1
 ```
+Temporary fixes needed for running the fits:
+```bash
+There is a placeholder (XX-SIGNAL-XX) for the signal point in the datacards. While running the fits, please replace this the correct name of the signal point you want to look at. Its already fixed in the script when you run the limit scan (below).
+```
 
 ## Running the limit scan
 
