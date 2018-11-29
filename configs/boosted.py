@@ -26,8 +26,8 @@ categories = []
 out_file_name = 'boosted.root'
 
 signals = {}
-#with open('../../../CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
-with open('/uscms/home/ahall/nobackup/LPC-DM/CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
+
+with open('../../../CMSSW_8_0_29/src/PandaAnalysis/LPC_T3/merging/signals.txt', 'r') as signal_file:
                 for line in signal_file:
                     name = line.rstrip()
                     signals[name+'_signal'] = ['signal',name+'_signal',1,1]
@@ -104,8 +104,8 @@ samples = {
     ,"ST_wen"                    :['singleelectronw','stop',1,0]
     ,"QCD_wen"                   :['singleelectronw','qcd',1,0]
     ,"Data_wen"                  :['singleelectronw','data',0,0]
-
-                   # Photon control                                                                                                                                          
+  
+  # Photon control                                                                                                                                          
     ,"Pho_pho"                   :['photon','gjets',1,0]
     ,"QCD_pho"                   :['photon','qcd',1,0]
     ,"Data_pho"                  :['photon','data',0,0]
